@@ -1,13 +1,13 @@
 import { Router } from "express";
-import User from "../models/User"
+import User from "../models/User.js"
 import bcrypt from "bcrypt"
-import {signUpBodyValidation,loginBodyValidation} from "../utils/validationSchema"
-import generateTokens from "../utils/generateToken";
+import {signUpBodyValidation,loginBodyValidation} from "../utils/validationSchema.js"
+import generateTokens from "../utils/generateToken.js";
 
 const router=Router()
 
 
-router.post("/signUp",async(req,res)=>{
+router.post("/signup",async(req,res)=>{
     try {
             const {error}=signUpBodyValidation(req.body)
             if(error){
